@@ -1,0 +1,384 @@
+<svg width="1280" height="720" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <style>
+      text { font-family: ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, monospace; }
+      .nav-item { fill: #64748b; font-size: 12px; }
+      .nav-active { fill: #e2e8f0; font-size: 12px; }
+      .card-label { fill: #64748b; font-size: 9.5px; letter-spacing: 1px; }
+      .card-value-g { fill: #00d4aa; font-size: 28px; font-weight: 700; }
+      .card-value-n { fill: #e2e8f0; font-size: 28px; font-weight: 700; }
+      .card-sub { fill: #475569; font-size: 9px; }
+      .asset-name { fill: #e2e8f0; font-size: 11px; font-weight: 600; }
+      .asset-r-g { fill: #00d4aa; font-size: 11px; font-weight: 600; }
+      .asset-r-r { fill: #ff4560; font-size: 11px; }
+      .price-label { fill: rgba(100,116,139,0.7); font-size: 8.5px; }
+      .time-label { fill: rgba(100,116,139,0.6); font-size: 8.5px; }
+    </style>
+    <clipPath id="chart-clip">
+      <rect x="240" y="218" width="670" height="360"/>
+    </clipPath>
+    <style>
+      @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+      .live-dot { animation: pulse 2s infinite; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#060b14"/>
+
+  <!-- ─────────────────────────── NAVBAR ─────────────────────────── -->
+  <rect x="0" y="0" width="1280" height="48" fill="#0a0f1a"/>
+  <line x1="0" y1="48" x2="1280" y2="48" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+  <!-- Logo -->
+  <text x="20" y="30" fill="#00d4aa" font-size="16" font-weight="700" letter-spacing="1">◈ ORACLE</text>
+
+  <!-- Nav items -->
+  <text x="152" y="30" class="nav-active">Dashboard</text>
+  <line x1="152" y1="46" x2="220" y2="46" stroke="#00d4aa" stroke-width="2"/>
+  <text x="234" y="30" class="nav-item">Análise</text>
+  <text x="306" y="30" class="nav-item">Replay</text>
+  <text x="374" y="30" class="nav-item">Briefing</text>
+  <text x="442" y="30" class="nav-item">Trades</text>
+
+  <!-- Status badges -->
+  <circle cx="1168" cy="24" r="5" fill="#00d4aa" class="live-dot"/>
+  <text x="1178" y="28" fill="#00d4aa" font-size="10" font-weight="600">LIVE</text>
+  <rect x="1210" y="14" width="56" height="20" rx="4" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+  <text x="1238" y="28" fill="#6366f1" font-size="9" text-anchor="middle">WS ●</text>
+
+  <!-- ─────────────────────────── LEFT SIDEBAR ─────────────────────── -->
+  <rect x="0" y="48" width="220" height="672" fill="#0a0f1a"/>
+  <line x1="220" y1="48" x2="220" y2="720" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+  <!-- Sidebar header -->
+  <text x="14" y="76" fill="#475569" font-size="9" font-weight="700" letter-spacing="1.5">ATIVOS MONITORADOS</text>
+
+  <!-- Asset rows -->
+  <!-- WINUSDT (active/selected) -->
+  <rect x="6" y="84" width="208" height="44" rx="4" fill="#0f1923"/>
+  <rect x="6" y="84" width="3" height="44" rx="1" fill="#00d4aa"/>
+  <rect x="16" y="94" width="36" height="16" rx="3" fill="rgba(0,212,170,0.12)" stroke="rgba(0,212,170,0.25)" stroke-width="1"/>
+  <text x="34" y="106" text-anchor="middle" fill="#00d4aa" font-size="8" font-weight="700">LONG</text>
+  <text x="60" y="100" class="asset-name">WINUSDT</text>
+  <text x="60" y="114" fill="#64748b" font-size="8.5">M5 · 50,290</text>
+  <text x="202" y="106" text-anchor="end" class="asset-r-g">+2.1R</text>
+
+  <!-- BTCUSDT -->
+  <rect x="6" y="132" width="208" height="44" rx="4" fill="transparent"/>
+  <rect x="16" y="142" width="36" height="16" rx="3" fill="rgba(0,212,170,0.08)" stroke="rgba(0,212,170,0.15)" stroke-width="1"/>
+  <text x="34" y="154" text-anchor="middle" fill="#00d4aa" font-size="8">LONG</text>
+  <text x="60" y="148" class="asset-name">BTCUSDT</text>
+  <text x="60" y="162" fill="#64748b" font-size="8.5">H1 · 91,240</text>
+  <text x="202" y="154" text-anchor="end" class="asset-r-g">+0.8R</text>
+
+  <!-- EURUSD -->
+  <rect x="6" y="180" width="208" height="44" rx="4" fill="transparent"/>
+  <rect x="16" y="190" width="40" height="16" rx="3" fill="rgba(255,69,96,0.08)" stroke="rgba(255,69,96,0.15)" stroke-width="1"/>
+  <text x="36" y="202" text-anchor="middle" fill="#ff4560" font-size="8">SHORT</text>
+  <text x="64" y="196" class="asset-name">EURUSD</text>
+  <text x="64" y="210" fill="#64748b" font-size="8.5">M15 · 1.0834</text>
+  <text x="202" y="202" text-anchor="end" class="asset-r-r">-0.3R</text>
+
+  <!-- GBPUSD -->
+  <rect x="6" y="228" width="208" height="44" rx="4" fill="transparent"/>
+  <rect x="16" y="238" width="36" height="16" rx="3" fill="rgba(0,212,170,0.08)" stroke="rgba(0,212,170,0.15)" stroke-width="1"/>
+  <text x="34" y="250" text-anchor="middle" fill="#00d4aa" font-size="8">LONG</text>
+  <text x="60" y="244" class="asset-name">GBPUSD</text>
+  <text x="60" y="258" fill="#64748b" font-size="8.5">M15 · 1.2710</text>
+  <text x="202" y="250" text-anchor="end" class="asset-r-g">+1.2R</text>
+
+  <!-- NASDAQ -->
+  <rect x="6" y="276" width="208" height="44" rx="4" fill="transparent"/>
+  <rect x="16" y="286" width="36" height="16" rx="3" fill="rgba(0,212,170,0.08)" stroke="rgba(0,212,170,0.15)" stroke-width="1"/>
+  <text x="34" y="298" text-anchor="middle" fill="#00d4aa" font-size="8">LONG</text>
+  <text x="60" y="292" class="asset-name">NAS100</text>
+  <text x="60" y="306" fill="#64748b" font-size="8.5">M5 · 19,840</text>
+  <text x="202" y="298" text-anchor="end" class="asset-r-g">+3.8R</text>
+
+  <line x1="14" y1="332" x2="206" y2="332" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- Sidebar stats -->
+  <text x="14" y="352" fill="#475569" font-size="9" font-weight="700" letter-spacing="1.5">PERFORMANCE</text>
+  <text x="14" y="382" fill="#94a3b8" font-size="10">Hoje</text>
+  <text x="206" y="382" text-anchor="end" fill="#00d4aa" font-size="15" font-weight="700">+7.6R</text>
+  <text x="14" y="408" fill="#94a3b8" font-size="10">Semana</text>
+  <text x="206" y="408" text-anchor="end" fill="#00d4aa" font-size="15" font-weight="700">+12.4R</text>
+  <text x="14" y="434" fill="#94a3b8" font-size="10">Winrate</text>
+  <text x="206" y="434" text-anchor="end" fill="#e2e8f0" font-size="15" font-weight="700">71%</text>
+
+  <line x1="14" y1="450" x2="206" y2="450" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <text x="14" y="470" fill="#475569" font-size="9" font-weight="700" letter-spacing="1.5">EM ABERTO</text>
+  <text x="14" y="494" fill="#94a3b8" font-size="10">Posições</text>
+  <text x="206" y="494" text-anchor="end" fill="#e2e8f0" font-size="15" font-weight="700">2</text>
+  <text x="14" y="518" fill="#94a3b8" font-size="10">Risco ativo</text>
+  <text x="206" y="518" text-anchor="end" fill="#f59e0b" font-size="15" font-weight="700">0.8R</text>
+
+  <!-- ─────────────────────────── METRIC CARDS ─────────────────────── -->
+  <!-- Card 1: R Total -->
+  <rect x="228" y="64" width="165" height="104" rx="6" fill="#0f1923" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="240" y="82" class="card-label">R TOTAL HOJE</text>
+  <text x="240" y="118" class="card-value-g">+12.4R</text>
+  <text x="240" y="136" fill="#10b981" font-size="9">↑ melhor semana do mês</text>
+  <text x="240" y="153" class="card-sub">17 de 24 operações</text>
+
+  <!-- Card 2: Winrate -->
+  <rect x="401" y="64" width="165" height="104" rx="6" fill="#0f1923" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="413" y="82" class="card-label">WINRATE</text>
+  <text x="413" y="118" class="card-value-g">71%</text>
+  <!-- Winrate bar -->
+  <rect x="413" y="128" width="141" height="5" rx="2" fill="rgba(255,255,255,0.06)"/>
+  <rect x="413" y="128" width="100" height="5" rx="2" fill="#00d4aa"/>
+  <text x="413" y="153" class="card-sub">Acima da média de 30d: 64%</text>
+
+  <!-- Card 3: Em Aberto -->
+  <rect x="574" y="64" width="165" height="104" rx="6" fill="#0f1923" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="586" y="82" class="card-label">EM ABERTO</text>
+  <text x="586" y="118" class="card-value-n">2</text>
+  <text x="586" y="136" fill="#94a3b8" font-size="9">0.8R risco total</text>
+  <text x="586" y="153" class="card-sub">WIN +0.4R · BTC +0.4R</text>
+
+  <!-- Card 4: Sessão hoje -->
+  <rect x="747" y="64" width="165" height="104" rx="6" fill="#0f1923" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="759" y="82" class="card-label">SESSÃO ATUAL</text>
+  <text x="759" y="118" class="card-value-g">+3.2R</text>
+  <text x="759" y="136" fill="#10b981" font-size="9">↑ 2 ops fechadas</text>
+  <text x="759" y="153" class="card-sub">Drawdown máx: 0.0R</text>
+
+  <!-- ─────────────────────────── CHART CARD ─────────────────────── -->
+  <rect x="228" y="176" width="684" height="440" rx="6" fill="#0f1923" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+  <!-- Chart header -->
+  <text x="244" y="200" fill="#e2e8f0" font-size="13" font-weight="600">WINUSDT</text>
+  <rect x="314" y="188" width="28" height="16" rx="3" fill="rgba(148,163,184,0.1)"/>
+  <text x="328" y="200" text-anchor="middle" fill="#94a3b8" font-size="9">M5</text>
+  <text x="354" y="200" fill="#00d4aa" font-size="12" font-weight="600">50,290</text>
+  <text x="416" y="200" fill="#00d4aa" font-size="10">+0.38%</text>
+  <line x1="236" y1="210" x2="904" y2="210" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- Chart grid lines (horizontal) -->
+  <g stroke="rgba(255,255,255,0.035)" stroke-width="1">
+    <line x1="248" y1="242" x2="900" y2="242"/>
+    <line x1="248" y1="282" x2="900" y2="282"/>
+    <line x1="248" y1="322" x2="900" y2="322"/>
+    <line x1="248" y1="362" x2="900" y2="362"/>
+    <line x1="248" y1="402" x2="900" y2="402"/>
+    <line x1="248" y1="442" x2="900" y2="442"/>
+    <line x1="248" y1="482" x2="900" y2="482"/>
+    <line x1="248" y1="522" x2="900" y2="522"/>
+  </g>
+
+  <!-- Price labels (Y axis) -->
+  <text x="905" y="246" class="price-label">50,480</text>
+  <text x="905" y="286" class="price-label">50,440</text>
+  <text x="905" y="326" class="price-label">50,400</text>
+  <text x="905" y="366" class="price-label">50,360</text>
+  <text x="905" y="406" class="price-label">50,320</text>
+  <text x="905" y="446" class="price-label">50,280</text>
+  <text x="905" y="486" class="price-label">50,240</text>
+  <text x="905" y="526" class="price-label">50,200</text>
+
+  <!-- Current price dashed line (y=290, last close of latest candle) -->
+  <line x1="248" y1="290" x2="900" y2="290" stroke="rgba(0,212,170,0.25)" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="900" y="283" width="58" height="14" rx="2" fill="rgba(0,212,170,0.15)"/>
+  <text x="929" y="294" text-anchor="middle" fill="#00d4aa" font-size="9" font-weight="600">50,406</text>
+
+  <!-- ═══ CANDLESTICK CHART ═══ -->
+  <!-- Candle 0: RED o=330 c=348 h=326 l=352 -->
+  <line x1="306" y1="326" x2="306" y2="352" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="295" y="330" width="22" height="18" fill="#ff4560" rx="1"/>
+  <!-- Candle 1: GREEN o=348 c=342 h=340 l=354 -->
+  <line x1="334" y1="340" x2="334" y2="354" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="323" y="342" width="22" height="6" fill="#00d4aa" rx="1"/>
+  <!-- Candle 2: RED o=342 c=356 h=338 l=360 -->
+  <line x1="362" y1="338" x2="362" y2="360" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="351" y="342" width="22" height="14" fill="#ff4560" rx="1"/>
+  <!-- Candle 3: RED o=356 c=370 h=352 l=374 -->
+  <line x1="390" y1="352" x2="390" y2="374" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="379" y="356" width="22" height="14" fill="#ff4560" rx="1"/>
+  <!-- Candle 4: GREEN o=370 c=364 h=360 l=376 -->
+  <line x1="418" y1="360" x2="418" y2="376" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="407" y="364" width="22" height="6" fill="#00d4aa" rx="1"/>
+  <!-- Candle 5: RED o=364 c=370 h=360 l=374 -->
+  <line x1="446" y1="360" x2="446" y2="374" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="435" y="364" width="22" height="6" fill="#ff4560" rx="1"/>
+  <!-- Candle 6: GREEN o=370 c=366 h=364 l=373 -->
+  <line x1="474" y1="364" x2="474" y2="373" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="463" y="366" width="22" height="4" fill="#00d4aa" rx="1"/>
+  <!-- Candle 7: RED o=366 c=372 h=362 l=376 -->
+  <line x1="502" y1="362" x2="502" y2="376" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="491" y="366" width="22" height="6" fill="#ff4560" rx="1"/>
+  <!-- Candle 8: GREEN o=372 c=364 h=360 l=376 -->
+  <line x1="530" y1="360" x2="530" y2="376" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="519" y="364" width="22" height="8" fill="#00d4aa" rx="1"/>
+  <!-- Candle 9: GREEN o=364 c=360 h=356 l=368 -->
+  <line x1="558" y1="356" x2="558" y2="368" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="547" y="360" width="22" height="4" fill="#00d4aa" rx="1"/>
+  <!-- Candle 10: GREEN o=360 c=348 h=342 l=364 -->
+  <line x1="586" y1="342" x2="586" y2="364" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="575" y="348" width="22" height="12" fill="#00d4aa" rx="1"/>
+  <!-- Candle 11: GREEN o=348 c=338 h=332 l=352 -->
+  <line x1="614" y1="332" x2="614" y2="352" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="603" y="338" width="22" height="10" fill="#00d4aa" rx="1"/>
+  <!-- Candle 12: RED o=338 c=342 h=336 l=346 -->
+  <line x1="642" y1="336" x2="642" y2="346" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="631" y="338" width="22" height="4" fill="#ff4560" rx="1"/>
+  <!-- Candle 13: GREEN o=342 c=328 h=322 l=346 -->
+  <line x1="670" y1="322" x2="670" y2="346" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="659" y="328" width="22" height="14" fill="#00d4aa" rx="1"/>
+  <!-- Candle 14: GREEN o=328 c=318 h=313 l=332 -->
+  <line x1="698" y1="313" x2="698" y2="332" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="687" y="318" width="22" height="10" fill="#00d4aa" rx="1"/>
+  <!-- Candle 15: RED o=318 c=322 h=316 l=328 -->
+  <line x1="726" y1="316" x2="726" y2="328" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="715" y="318" width="22" height="4" fill="#ff4560" rx="1"/>
+  <!-- Candle 16: GREEN o=322 c=306 h=300 l=326 -->
+  <line x1="754" y1="300" x2="754" y2="326" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="743" y="306" width="22" height="16" fill="#00d4aa" rx="1"/>
+  <!-- Candle 17: GREEN o=306 c=300 h=295 l=310 -->
+  <line x1="782" y1="295" x2="782" y2="310" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="771" y="300" width="22" height="6" fill="#00d4aa" rx="1"/>
+  <!-- Candle 18: RED o=300 c=304 h=298 l=308 -->
+  <line x1="810" y1="298" x2="810" y2="308" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="799" y="300" width="22" height="4" fill="#ff4560" rx="1"/>
+  <!-- Candle 19: GREEN o=304 c=290 h=284 l=308 (latest, strong bull) -->
+  <line x1="838" y1="284" x2="838" y2="308" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="827" y="290" width="22" height="14" fill="#00d4aa" rx="1"/>
+
+  <!-- Volume area separator -->
+  <line x1="248" y1="568" x2="900" y2="568" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- Volume bars -->
+  <rect x="296" y="558" width="20" height="10" fill="rgba(255,69,96,0.35)" rx="1"/>
+  <rect x="324" y="561" width="20" height="7" fill="rgba(0,212,170,0.35)" rx="1"/>
+  <rect x="352" y="556" width="20" height="12" fill="rgba(255,69,96,0.35)" rx="1"/>
+  <rect x="380" y="555" width="20" height="13" fill="rgba(255,69,96,0.35)" rx="1"/>
+  <rect x="408" y="561" width="20" height="7" fill="rgba(0,212,170,0.35)" rx="1"/>
+  <rect x="436" y="562" width="20" height="6" fill="rgba(255,69,96,0.35)" rx="1"/>
+  <rect x="464" y="563" width="20" height="5" fill="rgba(0,212,170,0.35)" rx="1"/>
+  <rect x="492" y="562" width="20" height="6" fill="rgba(255,69,96,0.35)" rx="1"/>
+  <rect x="520" y="560" width="20" height="8" fill="rgba(0,212,170,0.35)" rx="1"/>
+  <rect x="548" y="559" width="20" height="9" fill="rgba(0,212,170,0.35)" rx="1"/>
+  <rect x="576" y="554" width="20" height="14" fill="rgba(0,212,170,0.45)" rx="1"/>
+  <rect x="604" y="551" width="20" height="17" fill="rgba(0,212,170,0.45)" rx="1"/>
+  <rect x="632" y="559" width="20" height="9" fill="rgba(255,69,96,0.35)" rx="1"/>
+  <rect x="660" y="552" width="20" height="16" fill="rgba(0,212,170,0.45)" rx="1"/>
+  <rect x="688" y="553" width="20" height="15" fill="rgba(0,212,170,0.45)" rx="1"/>
+  <rect x="716" y="560" width="20" height="8" fill="rgba(255,69,96,0.35)" rx="1"/>
+  <rect x="744" y="548" width="20" height="20" fill="rgba(0,212,170,0.5)" rx="1"/>
+  <rect x="772" y="552" width="20" height="16" fill="rgba(0,212,170,0.45)" rx="1"/>
+  <rect x="800" y="557" width="20" height="11" fill="rgba(255,69,96,0.35)" rx="1"/>
+  <rect x="828" y="546" width="20" height="22" fill="rgba(0,212,170,0.55)" rx="1"/>
+
+  <!-- X-axis time labels -->
+  <text x="306" y="612" text-anchor="middle" class="time-label">09:00</text>
+  <text x="418" y="612" text-anchor="middle" class="time-label">09:30</text>
+  <text x="530" y="612" text-anchor="middle" class="time-label">10:00</text>
+  <text x="642" y="612" text-anchor="middle" class="time-label">10:30</text>
+  <text x="754" y="612" text-anchor="middle" class="time-label">11:00</text>
+  <text x="838" y="612" text-anchor="middle" class="time-label">11:30</text>
+
+  <!-- ─────────────────────────── RIGHT PANEL ─────────────────────── -->
+  <!-- Analysis card -->
+  <rect x="924" y="64" width="348" height="432" rx="6" fill="#0f1923" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="940" y="86" fill="#475569" font-size="9" font-weight="700" letter-spacing="1.5">ANÁLISE ATIVA</text>
+  <text x="1264" y="86" text-anchor="end" fill="#334155" font-size="8.5">há 3 min</text>
+  <line x1="932" y1="96" x2="1264" y2="96" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <text x="940" y="118" fill="#e2e8f0" font-size="14" font-weight="700">WINUSDT</text>
+  <rect x="1010" y="106" width="38" height="18" rx="3" fill="rgba(0,212,170,0.14)" stroke="rgba(0,212,170,0.3)" stroke-width="1"/>
+  <text x="1029" y="119" text-anchor="middle" fill="#00d4aa" font-size="9" font-weight="700">LONG</text>
+  <text x="1062" y="118" fill="#64748b" font-size="9">M5 · Intraday</text>
+
+  <!-- Confidence score -->
+  <text x="940" y="148" fill="#475569" font-size="9" letter-spacing="1">CONFIANÇA</text>
+  <text x="940" y="180" fill="#00d4aa" font-size="36" font-weight="700">78</text>
+  <text x="984" y="172" fill="#00d4aa" font-size="18">%</text>
+  <rect x="1020" y="150" width="100" height="28" rx="3" fill="rgba(0,212,170,0.08)" stroke="rgba(0,212,170,0.15)" stroke-width="1"/>
+  <text x="1070" y="162" text-anchor="middle" fill="#00d4aa" font-size="9" font-weight="600">ALTA</text>
+  <text x="1070" y="174" text-anchor="middle" fill="#475569" font-size="8">convicção</text>
+
+  <!-- Confidence bar -->
+  <rect x="940" y="192" width="316" height="5" rx="2" fill="rgba(255,255,255,0.06)"/>
+  <rect x="940" y="192" width="246" height="5" rx="2" fill="#00d4aa"/>
+
+  <line x1="932" y1="210" x2="1264" y2="210" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <text x="940" y="226" fill="#475569" font-size="9" font-weight="700" letter-spacing="1">FATORES</text>
+
+  <!-- Factor bars -->
+  <!-- Tendência -->
+  <text x="940" y="246" fill="#94a3b8" font-size="9">Tendência (MTF)</text>
+  <text x="1256" y="246" text-anchor="end" fill="#00d4aa" font-size="9" font-weight="600">80%</text>
+  <rect x="940" y="250" width="316" height="4" rx="1" fill="rgba(255,255,255,0.05)"/>
+  <rect x="940" y="250" width="253" height="4" rx="1" fill="#00d4aa" opacity="0.7"/>
+  <!-- Setup -->
+  <text x="940" y="270" fill="#94a3b8" font-size="9">Setup Quality</text>
+  <text x="1256" y="270" text-anchor="end" fill="#f59e0b" font-size="9" font-weight="600">70%</text>
+  <rect x="940" y="274" width="316" height="4" rx="1" fill="rgba(255,255,255,0.05)"/>
+  <rect x="940" y="274" width="221" height="4" rx="1" fill="#f59e0b" opacity="0.7"/>
+  <!-- Histórico -->
+  <text x="940" y="294" fill="#94a3b8" font-size="9">Histórico Similar</text>
+  <text x="1256" y="294" text-anchor="end" fill="#00d4aa" font-size="9" font-weight="600">85%</text>
+  <rect x="940" y="298" width="316" height="4" rx="1" fill="rgba(255,255,255,0.05)"/>
+  <rect x="940" y="298" width="269" height="4" rx="1" fill="#00d4aa" opacity="0.7"/>
+  <!-- Macro -->
+  <text x="940" y="318" fill="#94a3b8" font-size="9">Contexto Macro</text>
+  <text x="1256" y="318" text-anchor="end" fill="#64748b" font-size="9">60%</text>
+  <rect x="940" y="322" width="316" height="4" rx="1" fill="rgba(255,255,255,0.05)"/>
+  <rect x="940" y="322" width="190" height="4" rx="1" fill="#64748b" opacity="0.7"/>
+  <!-- Mercado -->
+  <text x="940" y="342" fill="#94a3b8" font-size="9">Qualidade Mercado</text>
+  <text x="1256" y="342" text-anchor="end" fill="#00d4aa" font-size="9" font-weight="600">75%</text>
+  <rect x="940" y="346" width="316" height="4" rx="1" fill="rgba(255,255,255,0.05)"/>
+  <rect x="940" y="346" width="237" height="4" rx="1" fill="#00d4aa" opacity="0.7"/>
+
+  <line x1="932" y1="364" x2="1264" y2="364" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <text x="940" y="380" fill="#475569" font-size="9" font-weight="700" letter-spacing="1">PARÂMETROS</text>
+
+  <!-- Signal parameters -->
+  <text x="940" y="400" fill="#94a3b8" font-size="9">Entrada</text>
+  <text x="1256" y="400" text-anchor="end" fill="#e2e8f0" font-size="10" font-weight="600">50,290</text>
+  <text x="940" y="420" fill="#94a3b8" font-size="9">Stop Loss</text>
+  <text x="1256" y="420" text-anchor="end" fill="#ff4560" font-size="10" font-weight="600">50,250</text>
+  <text x="940" y="440" fill="#94a3b8" font-size="9">Alvo</text>
+  <text x="1256" y="440" text-anchor="end" fill="#00d4aa" font-size="10" font-weight="600">50,390</text>
+  <text x="940" y="460" fill="#94a3b8" font-size="9">R/R esperado</text>
+  <text x="1256" y="460" text-anchor="end" fill="#e2e8f0" font-size="10" font-weight="600">2.5R</text>
+  <text x="940" y="480" fill="#94a3b8" font-size="9">Setup</text>
+  <text x="1256" y="480" text-anchor="end" fill="#94a3b8" font-size="9">ICT BOS + FVG M5</text>
+
+  <!-- Recent trades mini card -->
+  <rect x="924" y="504" width="348" height="204" rx="6" fill="#0f1923" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="940" y="524" fill="#475569" font-size="9" font-weight="700" letter-spacing="1.5">OPERAÇÕES RECENTES</text>
+  <line x1="932" y1="532" x2="1264" y2="532" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- Trade rows -->
+  <text x="940" y="552" fill="#94a3b8" font-size="9.5">WINUSDT · LONG</text>
+  <rect x="1130" y="541" width="38" height="16" rx="3" fill="rgba(0,212,170,0.1)"/>
+  <text x="1149" y="553" text-anchor="middle" fill="#00d4aa" font-size="9">GAIN</text>
+  <text x="1256" y="553" text-anchor="end" fill="#00d4aa" font-size="10" font-weight="600">+1.8R</text>
+
+  <text x="940" y="576" fill="#94a3b8" font-size="9.5">WINUSDT · LONG</text>
+  <rect x="1130" y="565" width="38" height="16" rx="3" fill="rgba(0,212,170,0.1)"/>
+  <text x="1149" y="577" text-anchor="middle" fill="#00d4aa" font-size="9">GAIN</text>
+  <text x="1256" y="577" text-anchor="end" fill="#00d4aa" font-size="10" font-weight="600">+1.4R</text>
+
+  <text x="940" y="600" fill="#94a3b8" font-size="9.5">EURUSD · SHORT</text>
+  <rect x="1130" y="589" width="34" height="16" rx="3" fill="rgba(255,69,96,0.1)"/>
+  <text x="1147" y="601" text-anchor="middle" fill="#ff4560" font-size="9">LOSS</text>
+  <text x="1256" y="601" text-anchor="end" fill="#ff4560" font-size="10">-0.5R</text>
+
+  <text x="940" y="624" fill="#94a3b8" font-size="9.5">NAS100 · LONG</text>
+  <rect x="1130" y="613" width="38" height="16" rx="3" fill="rgba(0,212,170,0.1)"/>
+  <text x="1149" y="625" text-anchor="middle" fill="#00d4aa" font-size="9">GAIN</text>
+  <text x="1256" y="625" text-anchor="end" fill="#00d4aa" font-size="10" font-weight="600">+2.6R</text>
+
+  <line x1="932" y1="636" x2="1264" y2="636" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <text x="940" y="654" fill="#475569" font-size="9">4 operações · Hoje</text>
+  <text x="1256" y="654" text-anchor="end" fill="#00d4aa" font-size="11" font-weight="600">+5.3R</text>
+  <text x="940" y="670" fill="#475569" font-size="9">Drawdown máx sessão</text>
+  <text x="1256" y="670" text-anchor="end" fill="#64748b" font-size="10">0.5R</text>
+  <text x="940" y="686" fill="#475569" font-size="9">Melhor trade</text>
+  <text x="1256" y="686" text-anchor="end" fill="#00d4aa" font-size="10">+2.6R NAS100</text>
+</svg>

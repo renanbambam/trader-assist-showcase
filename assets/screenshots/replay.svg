@@ -1,0 +1,289 @@
+<svg width="1280" height="720" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <style>
+      text { font-family: ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, monospace; }
+      .label { fill: #64748b; font-size: 9px; letter-spacing: 1px; font-weight: 700; }
+      .value { fill: #e2e8f0; font-size: 13px; font-weight: 600; }
+      .value-g { fill: #00d4aa; font-size: 13px; font-weight: 600; }
+      .value-r { fill: #ff4560; font-size: 13px; }
+      .muted { fill: #475569; font-size: 9px; }
+    </style>
+  </defs>
+
+  <!-- Background with subtle gradient -->
+  <rect width="1280" height="720" fill="#060b14"/>
+  <rect width="1280" height="720" fill="url(#bg-gradient)" opacity="0.4"/>
+  <defs>
+    <radialGradient id="bg-gradient" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#0a1a2e"/>
+      <stop offset="100%" stop-color="#060b14"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ─── NAVBAR ─── -->
+  <rect x="0" y="0" width="1280" height="48" fill="#0a0f1a"/>
+  <line x1="0" y1="48" x2="1280" y2="48" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="20" y="30" fill="#00d4aa" font-size="16" font-weight="700" letter-spacing="1">◈ ORACLE</text>
+  <text x="152" y="30" fill="#64748b" font-size="12">Dashboard</text>
+  <text x="234" y="30" fill="#64748b" font-size="12">Análise</text>
+  <text x="306" y="30" fill="#e2e8f0" font-size="12">Replay</text>
+  <line x1="306" y1="46" x2="350" y2="46" stroke="#00d4aa" stroke-width="2"/>
+  <text x="364" y="30" fill="#64748b" font-size="12">Briefing</text>
+  <rect x="1190" y="14" width="76" height="20" rx="4" fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.25)" stroke-width="1"/>
+  <text x="1228" y="28" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">◉ REPLAY</text>
+
+  <!-- ─── MAIN REPLAY LAYOUT ─── -->
+  <!-- Left info panel -->
+  <rect x="16" y="60" width="280" height="648" rx="6" fill="#0f1923" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="32" y="82" class="label">SESSÃO DE REPLAY</text>
+  <line x1="24" y1="92" x2="288" y2="92" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <text x="32" y="112" fill="#94a3b8" font-size="10">Ativo</text>
+  <text x="284" y="112" text-anchor="end" fill="#e2e8f0" font-size="12" font-weight="600">EURUSD</text>
+  <text x="32" y="132" fill="#94a3b8" font-size="10">Timeframe</text>
+  <text x="284" y="132" text-anchor="end" fill="#e2e8f0" font-size="12">M15</text>
+  <text x="32" y="152" fill="#94a3b8" font-size="10">Data</text>
+  <text x="284" y="152" text-anchor="end" fill="#e2e8f0" font-size="12">24/05/2026</text>
+  <text x="32" y="172" fill="#94a3b8" font-size="10">Velocidade</text>
+  <text x="284" y="172" text-anchor="end" fill="#f59e0b" font-size="12">1x</text>
+
+  <line x1="24" y1="186" x2="288" y2="186" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <text x="32" y="204" class="label">PROGRESSO</text>
+
+  <!-- Progress bar -->
+  <rect x="32" y="212" width="240" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
+  <rect x="32" y="212" width="115" height="8" rx="4" fill="#6366f1"/>
+  <text x="32" y="234" fill="#94a3b8" font-size="9">Frame 24 de 50</text>
+  <text x="272" y="234" text-anchor="end" fill="#6366f1" font-size="10" font-weight="600">48%</text>
+
+  <!-- Speed controls -->
+  <line x1="24" y1="248" x2="288" y2="248" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <text x="32" y="266" class="label">VELOCIDADE</text>
+  <g>
+    <rect x="32" y="274" width="44" height="24" rx="3" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="54" y="291" text-anchor="middle" fill="#64748b" font-size="10">0.5x</text>
+    <rect x="84" y="274" width="44" height="24" rx="3" fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/>
+    <text x="106" y="291" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="600">1x</text>
+    <rect x="136" y="274" width="44" height="24" rx="3" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="158" y="291" text-anchor="middle" fill="#64748b" font-size="10">2x</text>
+    <rect x="188" y="274" width="44" height="24" rx="3" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="210" y="291" text-anchor="middle" fill="#64748b" font-size="10">5x</text>
+  </g>
+
+  <line x1="24" y1="314" x2="288" y2="314" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- Candle atual info (current frame OHLCV) -->
+  <text x="32" y="332" class="label">CANDLE ATUAL — FRAME 24</text>
+  <line x1="24" y1="340" x2="288" y2="340" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- Big candle direction indicator -->
+  <rect x="32" y="350" width="60" height="30" rx="4" fill="rgba(0,212,170,0.12)" stroke="rgba(0,212,170,0.25)" stroke-width="1"/>
+  <text x="62" y="370" text-anchor="middle" fill="#00d4aa" font-size="11" font-weight="700">▲ ALTA</text>
+
+  <text x="32" y="402" fill="#64748b" font-size="9">Abertura</text>
+  <text x="284" y="402" text-anchor="end" fill="#e2e8f0" font-size="11">1.08328</text>
+  <text x="32" y="422" fill="#64748b" font-size="9">Máxima</text>
+  <text x="284" y="422" text-anchor="end" fill="#00d4aa" font-size="11">1.08412</text>
+  <text x="32" y="442" fill="#64748b" font-size="9">Mínima</text>
+  <text x="284" y="442" text-anchor="end" fill="#ff4560" font-size="11">1.08298</text>
+  <text x="32" y="462" fill="#64748b" font-size="9">Fechamento</text>
+  <text x="284" y="462" text-anchor="end" fill="#00d4aa" font-size="12" font-weight="600">1.08394</text>
+  <text x="32" y="482" fill="#64748b" font-size="9">Volume</text>
+  <text x="284" y="482" text-anchor="end" fill="#94a3b8" font-size="11">1,284,500</text>
+  <text x="32" y="502" fill="#64748b" font-size="9">Hora</text>
+  <text x="284" y="502" text-anchor="end" fill="#94a3b8" font-size="11">10:30 UTC</text>
+
+  <line x1="24" y1="518" x2="288" y2="518" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- Notes section -->
+  <text x="32" y="534" class="label">ANOTAÇÕES DA SESSÃO</text>
+  <rect x="24" y="542" width="264" height="100" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <text x="32" y="560" fill="#334155" font-size="9">Adicionando notas durante o replay...</text>
+  <text x="32" y="576" fill="#334155" font-size="9">Identificar zonas de liquidez</text>
+  <text x="32" y="592" fill="#334155" font-size="9">Marcar BOS e FVG relevantes</text>
+
+  <!-- Action buttons -->
+  <rect x="24" y="656" width="120" height="36" rx="5" fill="rgba(0,212,170,0.1)" stroke="rgba(0,212,170,0.3)" stroke-width="1"/>
+  <text x="84" y="679" text-anchor="middle" fill="#00d4aa" font-size="10" font-weight="600">⏭ AVANÇAR</text>
+  <rect x="152" y="656" width="136" height="36" rx="5" fill="rgba(255,69,96,0.08)" stroke="rgba(255,69,96,0.2)" stroke-width="1"/>
+  <text x="220" y="679" text-anchor="middle" fill="#ff4560" font-size="10">⏹ FINALIZAR</text>
+
+  <!-- ─── MAIN CHART CARD ─── -->
+  <rect x="308" y="60" width="956" height="648" rx="6" fill="#0f1923" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+  <!-- Chart card header -->
+  <text x="326" y="86" fill="#e2e8f0" font-size="14" font-weight="600">EURUSD</text>
+  <rect x="390" y="74" width="30" height="18" rx="3" fill="rgba(148,163,184,0.1)"/>
+  <text x="405" y="87" text-anchor="middle" fill="#94a3b8" font-size="9">M15</text>
+  <text x="432" y="86" fill="#64748b" font-size="10">24/05/2026 · Sessão de Replay</text>
+
+  <!-- Progress indicator in chart header -->
+  <rect x="1092" y="73" width="160" height="20" rx="4" fill="rgba(99,102,241,0.1)" stroke="rgba(99,102,241,0.2)" stroke-width="1"/>
+  <rect x="1094" y="75" width="77" height="16" rx="3" fill="rgba(99,102,241,0.3)"/>
+  <text x="1172" y="87" text-anchor="middle" fill="#6366f1" font-size="9" font-weight="600">Frame 24 / 50</text>
+
+  <line x1="316" y1="100" x2="1256" y2="100" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- Chart area background -->
+  <rect x="316" y="108" width="932" height="440" fill="transparent"/>
+
+  <!-- Grid lines -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+    <line x1="326" y1="148" x2="1240" y2="148"/>
+    <line x1="326" y1="198" x2="1240" y2="198"/>
+    <line x1="326" y1="248" x2="1240" y2="248"/>
+    <line x1="326" y1="298" x2="1240" y2="298"/>
+    <line x1="326" y1="348" x2="1240" y2="348"/>
+    <line x1="326" y1="398" x2="1240" y2="398"/>
+    <line x1="326" y1="448" x2="1240" y2="448"/>
+    <line x1="326" y1="498" x2="1240" y2="498"/>
+  </g>
+
+  <!-- Price axis labels -->
+  <text x="1245" y="152" fill="rgba(100,116,139,0.6)" font-size="8.5">1.0855</text>
+  <text x="1245" y="202" fill="rgba(100,116,139,0.6)" font-size="8.5">1.0845</text>
+  <text x="1245" y="252" fill="rgba(100,116,139,0.6)" font-size="8.5">1.0835</text>
+  <text x="1245" y="302" fill="rgba(100,116,139,0.6)" font-size="8.5">1.0825</text>
+  <text x="1245" y="352" fill="rgba(100,116,139,0.6)" font-size="8.5">1.0815</text>
+  <text x="1245" y="402" fill="rgba(100,116,139,0.6)" font-size="8.5">1.0805</text>
+  <text x="1245" y="452" fill="rgba(100,116,139,0.6)" font-size="8.5">1.0795</text>
+  <text x="1245" y="502" fill="rgba(100,116,139,0.6)" font-size="8.5">1.0785</text>
+
+  <!-- Current price line -->
+  <line x1="326" y1="230" x2="1240" y2="230" stroke="rgba(0,212,170,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="1240" y="223" width="60" height="14" rx="2" fill="rgba(0,212,170,0.14)"/>
+  <text x="1270" y="234" text-anchor="middle" fill="#00d4aa" font-size="8.5" font-weight="600">1.08394</text>
+
+  <!-- ═══ CANDLESTICK CHART (24 candles — replay showing 24th as current) ═══ -->
+  <!-- Candles start at x=340, step=36px, body width=28px -->
+  <!-- Candles 1-23 are historical; candle 24 is current (highlighted) -->
+
+  <!-- c0: RED o=380 c=394 h=376 l=398 -->
+  <line x1="354" y1="376" x2="354" y2="398" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="340" y="380" width="28" height="14" fill="#ff4560" rx="1" opacity="0.85"/>
+  <!-- c1: GREEN o=394 c=386 h=382 l=398 -->
+  <line x1="390" y1="382" x2="390" y2="398" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="376" y="386" width="28" height="8" fill="#00d4aa" rx="1" opacity="0.85"/>
+  <!-- c2: RED o=386 c=398 h=382 l=402 -->
+  <line x1="426" y1="382" x2="426" y2="402" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="412" y="386" width="28" height="12" fill="#ff4560" rx="1" opacity="0.85"/>
+  <!-- c3: RED o=398 c=410 h=394 l=414 -->
+  <line x1="462" y1="394" x2="462" y2="414" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="448" y="398" width="28" height="12" fill="#ff4560" rx="1" opacity="0.85"/>
+  <!-- c4: GREEN o=410 c=402 h=398 l=414 -->
+  <line x1="498" y1="398" x2="498" y2="414" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="484" y="402" width="28" height="8" fill="#00d4aa" rx="1" opacity="0.85"/>
+  <!-- c5: RED o=402 c=412 h=398 l=416 -->
+  <line x1="534" y1="398" x2="534" y2="416" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="520" y="402" width="28" height="10" fill="#ff4560" rx="1" opacity="0.85"/>
+  <!-- c6: GREEN o=412 c=405 h=401 l=415 -->
+  <line x1="570" y1="401" x2="570" y2="415" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="556" y="405" width="28" height="7" fill="#00d4aa" rx="1" opacity="0.85"/>
+  <!-- c7: RED o=405 c=416 h=401 l=420 -->
+  <line x1="606" y1="401" x2="606" y2="420" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="592" y="405" width="28" height="11" fill="#ff4560" rx="1" opacity="0.85"/>
+  <!-- c8: GREEN o=416 c=404 h=399 l=420 -->
+  <line x1="642" y1="399" x2="642" y2="420" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="628" y="404" width="28" height="12" fill="#00d4aa" rx="1" opacity="0.85"/>
+  <!-- c9: GREEN o=404 c=395 h=390 l=408 -->
+  <line x1="678" y1="390" x2="678" y2="408" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="664" y="395" width="28" height="9" fill="#00d4aa" rx="1" opacity="0.85"/>
+  <!-- c10: GREEN o=395 c=380 h=374 l=399 -->
+  <line x1="714" y1="374" x2="714" y2="399" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="700" y="380" width="28" height="15" fill="#00d4aa" rx="1" opacity="0.85"/>
+  <!-- c11: GREEN o=380 c=368 h=362 l=384 -->
+  <line x1="750" y1="362" x2="750" y2="384" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="736" y="368" width="28" height="12" fill="#00d4aa" rx="1" opacity="0.85"/>
+  <!-- c12: RED o=368 c=374 h=365 l=378 -->
+  <line x1="786" y1="365" x2="786" y2="378" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="772" y="368" width="28" height="6" fill="#ff4560" rx="1" opacity="0.85"/>
+  <!-- c13: GREEN o=374 c=360 h=354 l=378 -->
+  <line x1="822" y1="354" x2="822" y2="378" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="808" y="360" width="28" height="14" fill="#00d4aa" rx="1" opacity="0.85"/>
+  <!-- c14: GREEN o=360 c=348 h=342 l=364 -->
+  <line x1="858" y1="342" x2="858" y2="364" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="844" y="348" width="28" height="12" fill="#00d4aa" rx="1" opacity="0.85"/>
+  <!-- c15: RED o=348 c=354 h=345 l=358 -->
+  <line x1="894" y1="345" x2="894" y2="358" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="880" y="348" width="28" height="6" fill="#ff4560" rx="1" opacity="0.85"/>
+  <!-- c16: GREEN o=354 c=340 h=334 l=358 -->
+  <line x1="930" y1="334" x2="930" y2="358" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="916" y="340" width="28" height="14" fill="#00d4aa" rx="1" opacity="0.85"/>
+  <!-- c17: GREEN o=340 c=330 h=325 l=344 -->
+  <line x1="966" y1="325" x2="966" y2="344" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="952" y="330" width="28" height="10" fill="#00d4aa" rx="1" opacity="0.85"/>
+  <!-- c18: RED o=330 c=336 h=327 l=340 -->
+  <line x1="1002" y1="327" x2="1002" y2="340" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="988" y="330" width="28" height="6" fill="#ff4560" rx="1" opacity="0.85"/>
+  <!-- c19: GREEN o=336 c=322 h=316 l=340 -->
+  <line x1="1038" y1="316" x2="1038" y2="340" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="1024" y="322" width="28" height="14" fill="#00d4aa" rx="1" opacity="0.85"/>
+  <!-- c20: GREEN o=322 c=310 h=304 l=326 -->
+  <line x1="1074" y1="304" x2="1074" y2="326" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="1060" y="310" width="28" height="12" fill="#00d4aa" rx="1" opacity="0.85"/>
+  <!-- c21: RED o=310 c=316 h=307 l=320 -->
+  <line x1="1110" y1="307" x2="1110" y2="320" stroke="#ff4560" stroke-width="1.5"/>
+  <rect x="1096" y="310" width="28" height="6" fill="#ff4560" rx="1" opacity="0.85"/>
+  <!-- c22: GREEN o=316 c=302 h=296 l=320 -->
+  <line x1="1146" y1="296" x2="1146" y2="320" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="1132" y="302" width="28" height="14" fill="#00d4aa" rx="1" opacity="0.85"/>
+  <!-- c23 CURRENT: GREEN o=308 c=230 h=224 l=314 (frame 24, highlighted) -->
+  <!-- Highlight glow for current candle -->
+  <rect x="1164" y="218" width="40" height="96" rx="2" fill="rgba(0,212,170,0.04)" stroke="rgba(0,212,170,0.1)" stroke-width="1"/>
+  <line x1="1184" y1="224" x2="1184" y2="314" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="1168" y="230" width="32" height="78" fill="#00d4aa" rx="1"/>
+  <!-- "CURRENT" label above latest candle -->
+  <line x1="1184" y1="218" x2="1184" y2="210" stroke="rgba(0,212,170,0.5)" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="1160" y="196" width="50" height="14" rx="2" fill="rgba(0,212,170,0.15)" stroke="rgba(0,212,170,0.3)" stroke-width="1"/>
+  <text x="1185" y="207" text-anchor="middle" fill="#00d4aa" font-size="7.5" font-weight="600">ATUAL</text>
+
+  <!-- Volume area -->
+  <line x1="326" y1="558" x2="1240" y2="558" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <rect x="340" y="568" width="26" height="10" fill="rgba(255,69,96,0.3)" rx="1"/>
+  <rect x="376" y="565" width="26" height="7" fill="rgba(0,212,170,0.3)" rx="1"/>
+  <rect x="412" y="563" width="26" height="12" fill="rgba(255,69,96,0.3)" rx="1"/>
+  <rect x="448" y="562" width="26" height="13" fill="rgba(255,69,96,0.3)" rx="1"/>
+  <rect x="484" y="566" width="26" height="7" fill="rgba(0,212,170,0.3)" rx="1"/>
+  <rect x="520" y="566" width="26" height="6" fill="rgba(255,69,96,0.3)" rx="1"/>
+  <rect x="556" y="567" width="26" height="5" fill="rgba(0,212,170,0.3)" rx="1"/>
+  <rect x="592" y="566" width="26" height="6" fill="rgba(255,69,96,0.3)" rx="1"/>
+  <rect x="628" y="565" width="26" height="8" fill="rgba(0,212,170,0.3)" rx="1"/>
+  <rect x="664" y="564" width="26" height="9" fill="rgba(0,212,170,0.3)" rx="1"/>
+  <rect x="700" y="560" width="26" height="14" fill="rgba(0,212,170,0.4)" rx="1"/>
+  <rect x="736" y="557" width="26" height="17" fill="rgba(0,212,170,0.4)" rx="1"/>
+  <rect x="772" y="564" width="26" height="9" fill="rgba(255,69,96,0.3)" rx="1"/>
+  <rect x="808" y="558" width="26" height="16" fill="rgba(0,212,170,0.4)" rx="1"/>
+  <rect x="844" y="559" width="26" height="15" fill="rgba(0,212,170,0.4)" rx="1"/>
+  <rect x="880" y="563" width="26" height="8" fill="rgba(255,69,96,0.3)" rx="1"/>
+  <rect x="916" y="555" width="26" height="20" fill="rgba(0,212,170,0.45)" rx="1"/>
+  <rect x="952" y="558" width="26" height="16" fill="rgba(0,212,170,0.4)" rx="1"/>
+  <rect x="988" y="561" width="26" height="11" fill="rgba(255,69,96,0.3)" rx="1"/>
+  <rect x="1024" y="554" width="26" height="18" fill="rgba(0,212,170,0.4)" rx="1"/>
+  <rect x="1060" y="557" width="26" height="16" fill="rgba(0,212,170,0.4)" rx="1"/>
+  <rect x="1096" y="561" width="26" height="10" fill="rgba(255,69,96,0.3)" rx="1"/>
+  <rect x="1132" y="553" width="26" height="22" fill="rgba(0,212,170,0.45)" rx="1"/>
+  <!-- Current candle volume (highlighted) -->
+  <rect x="1168" y="546" width="32" height="28" fill="rgba(0,212,170,0.55)" rx="1"/>
+
+  <!-- X-axis time labels -->
+  <text x="354" y="600" text-anchor="middle" fill="rgba(100,116,139,0.5)" font-size="8.5">08:00</text>
+  <text x="534" y="600" text-anchor="middle" fill="rgba(100,116,139,0.5)" font-size="8.5">09:00</text>
+  <text x="714" y="600" text-anchor="middle" fill="rgba(100,116,139,0.5)" font-size="8.5">10:00</text>
+  <text x="894" y="600" text-anchor="middle" fill="rgba(100,116,139,0.5)" font-size="8.5">11:00</text>
+  <text x="1074" y="600" text-anchor="middle" fill="rgba(100,116,139,0.5)" font-size="8.5">12:00</text>
+  <text x="1184" y="600" text-anchor="middle" fill="#00d4aa" font-size="8.5">10:30 ●</text>
+
+  <!-- Bottom bar with controls -->
+  <rect x="316" y="614" width="932" height="80" rx="0" fill="rgba(0,0,0,0.2)"/>
+  <line x1="316" y1="614" x2="1248" y2="614" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- Replay controls -->
+  <rect x="500" y="628" width="148" height="38" rx="6" fill="rgba(0,212,170,0.1)" stroke="rgba(0,212,170,0.3)" stroke-width="1.5"/>
+  <text x="574" y="652" text-anchor="middle" fill="#00d4aa" font-size="11" font-weight="600">⏭  Avançar Frame</text>
+  <rect x="660" y="628" width="120" height="38" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="720" y="652" text-anchor="middle" fill="#64748b" font-size="11">⏹  Finalizar</text>
+
+  <!-- WebSocket live indicator -->
+  <circle cx="900" cy="648" r="4" fill="#00d4aa" opacity="0.8"/>
+  <text x="910" y="652" fill="#00d4aa" font-size="9">WS — frame recebido via WebSocket</text>
+</svg>

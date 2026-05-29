@@ -1,0 +1,172 @@
+<svg width="1000" height="560" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560">
+  <defs>
+    <style>text { font-family: ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, monospace; }</style>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="rgba(148,163,184,0.5)"/>
+    </marker>
+    <marker id="arr-g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#00d4aa"/>
+    </marker>
+    <marker id="arr-b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b82f6"/>
+    </marker>
+    <marker id="arr-r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="rgba(148,163,184,0.5)"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="560" fill="#060b14"/>
+
+  <text x="500" y="36" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="600" letter-spacing="3">SYSTEM OVERVIEW</text>
+  <line x1="320" y1="48" x2="680" y2="48" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+
+  <!-- ── Browser / SPA ── -->
+  <rect x="32" y="190" width="148" height="140" rx="8" fill="#0a1520" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="106" y="214" text-anchor="middle" fill="#6366f1" font-size="10" font-weight="600" letter-spacing="1">BROWSER / SPA</text>
+  <line x1="40" y1="222" x2="172" y2="222" stroke="rgba(99,102,241,0.2)" stroke-width="1"/>
+  <g fill="rgba(226,232,240,0.45)" font-size="8.5">
+    <text x="44" y="238">• Vanilla JS SPA</text>
+    <text x="44" y="253">• Lightweight Charts</text>
+    <text x="44" y="268">• HTTP REST calls</text>
+    <text x="44" y="283">• WebSocket client</text>
+    <text x="44" y="298">• Real-time events</text>
+  </g>
+
+  <!-- HTTP arrow → -->
+  <line x1="181" y1="228" x2="264" y2="208" stroke="rgba(148,163,184,0.4)" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="5,3"/>
+  <text x="204" y="206" fill="rgba(148,163,184,0.5)" font-size="8">HTTP REST</text>
+  <!-- HTTP arrow ← -->
+  <line x1="264" y1="220" x2="181" y2="236" stroke="rgba(148,163,184,0.25)" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- WS arrow ↔ -->
+  <line x1="181" y1="270" x2="264" y2="320" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arr-b)" opacity="0.6"/>
+  <line x1="264" y1="330" x2="181" y2="280" stroke="#6366f1" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+  <text x="192" y="312" fill="#6366f1" font-size="8" opacity="0.7">WebSocket</text>
+
+  <!-- ── Interface: FastAPI ── -->
+  <rect x="272" y="140" width="220" height="100" rx="8" fill="#0a1520" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="382" y="162" text-anchor="middle" fill="#6366f1" font-size="10" font-weight="600" letter-spacing="1">FASTAPI / INTERFACE</text>
+  <line x1="280" y1="170" x2="484" y2="170" stroke="rgba(99,102,241,0.2)" stroke-width="1"/>
+  <g fill="rgba(226,232,240,0.45)" font-size="8.5">
+    <text x="284" y="186">• ASGI + uvicorn</text>
+    <text x="284" y="201">• Typed routers per bounded context</text>
+    <text x="284" y="216">• CORS + CorrelationId middleware</text>
+  </g>
+
+  <!-- ── WebSocket Gateway ── -->
+  <rect x="272" y="274" width="220" height="100" rx="8" fill="#0a1520" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="382" y="296" text-anchor="middle" fill="#6366f1" font-size="10" font-weight="600" letter-spacing="1">WEBSOCKET GATEWAY</text>
+  <line x1="280" y1="304" x2="484" y2="304" stroke="rgba(99,102,241,0.2)" stroke-width="1"/>
+  <g fill="rgba(226,232,240,0.45)" font-size="8.5">
+    <text x="284" y="320">• Per-client subscriptions</text>
+    <text x="284" y="335">• asyncio.gather fan-out</text>
+    <text x="284" y="350">• Heartbeat + cold-start snapshots</text>
+  </g>
+
+  <!-- FastAPI → Use Cases -->
+  <line x1="492" y1="190" x2="574" y2="190" stroke="rgba(148,163,184,0.4)" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- WS Gateway ↔ Redis EventBus (below) -->
+  <line x1="382" y1="374" x2="382" y2="418" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arr)" opacity="0.6" stroke-dasharray="5,3"/>
+  <text x="388" y="402" fill="#f59e0b" font-size="8" opacity="0.7">pub/sub</text>
+
+  <!-- ── Application: Use Cases ── -->
+  <rect x="582" y="140" width="200" height="100" rx="8" fill="#0a1520" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="682" y="162" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="600" letter-spacing="1">APPLICATION</text>
+  <line x1="590" y1="170" x2="774" y2="170" stroke="rgba(59,130,246,0.2)" stroke-width="1"/>
+  <g fill="rgba(226,232,240,0.45)" font-size="8.5">
+    <text x="594" y="186">• 1 use case per operation</text>
+    <text x="594" y="201">• DTOs in / DTOs out</text>
+    <text x="594" y="216">• Port interfaces (DI)</text>
+  </g>
+
+  <!-- Use Cases → Domain -->
+  <line x1="682" y1="240" x2="682" y2="274" stroke="rgba(148,163,184,0.4)" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Domain ── -->
+  <rect x="582" y="282" width="200" height="92" rx="8" fill="#080f1c" stroke="#10b981" stroke-width="2"/>
+  <text x="682" y="304" text-anchor="middle" fill="#10b981" font-size="10" font-weight="700" letter-spacing="1">DOMAIN</text>
+  <line x1="590" y1="312" x2="774" y2="312" stroke="rgba(16,185,129,0.15)" stroke-width="1"/>
+  <g fill="rgba(226,232,240,0.45)" font-size="8.5">
+    <text x="594" y="328">• Entities + Value Objects</text>
+    <text x="594" y="343">• Domain Services</text>
+    <text x="594" y="358">• No external imports</text>
+  </g>
+
+  <!-- Use Cases → Infrastructure (dashed, via port) -->
+  <line x1="782" y1="190" x2="850" y2="190" stroke="rgba(245,158,11,0.5)" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="5,3"/>
+  <text x="790" y="182" fill="rgba(245,158,11,0.6)" font-size="7.5">via ports</text>
+
+  <!-- ── Infrastructure: Scheduler ── -->
+  <rect x="858" y="140" width="120" height="100" rx="8" fill="#0a1520" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="918" y="162" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600" letter-spacing="1">SCHEDULER</text>
+  <line x1="866" y1="170" x2="970" y2="170" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+  <g fill="rgba(226,232,240,0.45)" font-size="8">
+    <text x="868" y="186">APScheduler</text>
+    <text x="868" y="200">MemoryJobStore</text>
+    <text x="868" y="214">Cron + interval</text>
+    <text x="868" y="228">jobs</text>
+  </g>
+
+  <!-- ── Infrastructure row (bottom) ── -->
+  <text x="500" y="408" text-anchor="middle" fill="rgba(245,158,11,0.5)" font-size="9" font-weight="600" letter-spacing="2">INFRASTRUCTURE ADAPTERS</text>
+
+  <!-- PostgreSQL -->
+  <rect x="32" y="422" width="130" height="76" rx="6" fill="#0a1520" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="97" y="442" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">PostgreSQL</text>
+  <g fill="rgba(226,232,240,0.4)" font-size="8">
+    <text x="40" y="457">asyncpg driver</text>
+    <text x="40" y="470">SQLAlchemy 2.0</text>
+    <text x="40" y="483">Alembic migrations</text>
+  </g>
+
+  <!-- Redis -->
+  <rect x="178" y="422" width="120" height="76" rx="6" fill="#0a1520" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="238" y="442" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">Redis</text>
+  <g fill="rgba(226,232,240,0.4)" font-size="8">
+    <text x="186" y="457">aioredis client</text>
+    <text x="186" y="470">Pub/Sub channels</text>
+    <text x="186" y="483">Session cache</text>
+  </g>
+
+  <!-- Claude AI -->
+  <rect x="314" y="422" width="138" height="76" rx="6" fill="#0a1520" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="383" y="442" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">Anthropic Claude</text>
+  <g fill="rgba(226,232,240,0.4)" font-size="8">
+    <text x="322" y="457">Streaming responses</text>
+    <text x="322" y="470">Vision multimodal</text>
+    <text x="322" y="483">Prompt caching</text>
+  </g>
+
+  <!-- MT5 / yfinance -->
+  <rect x="468" y="422" width="148" height="76" rx="6" fill="#0a1520" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="542" y="442" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">MT5 / yfinance</text>
+  <g fill="rgba(226,232,240,0.4)" font-size="8">
+    <text x="476" y="457">Live market data</text>
+    <text x="476" y="470">run_in_executor</text>
+    <text x="476" y="483">Historical OHLCV</text>
+  </g>
+
+  <!-- Telegram -->
+  <rect x="632" y="422" width="130" height="76" rx="6" fill="#0a1520" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="697" y="442" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">Telegram</text>
+  <g fill="rgba(226,232,240,0.4)" font-size="8">
+    <text x="640" y="457">Bot API</text>
+    <text x="640" y="470">Briefing delivery</text>
+    <text x="640" y="483">Weekly summaries</text>
+  </g>
+
+  <!-- Testcontainers -->
+  <rect x="778" y="422" width="190" height="76" rx="6" fill="#0a1520" stroke="rgba(148,163,184,0.3)" stroke-width="1.2" stroke-dasharray="5,3"/>
+  <text x="873" y="442" text-anchor="middle" fill="rgba(148,163,184,0.5)" font-size="9" font-weight="600">Testcontainers (test)</text>
+  <g fill="rgba(148,163,184,0.35)" font-size="8">
+    <text x="786" y="457">Real PG + Redis</text>
+    <text x="786" y="470">No mocks in tests</text>
+    <text x="786" y="483">Docker-in-Docker CI</text>
+  </g>
+
+  <!-- Arrow from Use Cases down to infrastructure row -->
+  <line x1="682" y1="374" x2="382" y2="418" stroke="rgba(245,158,11,0.25)" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+  <line x1="682" y1="374" x2="542" y2="418" stroke="rgba(245,158,11,0.25)" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+  <line x1="682" y1="374" x2="682" y2="418" stroke="rgba(245,158,11,0.25)" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+  <line x1="682" y1="374" x2="97" y2="418" stroke="rgba(245,158,11,0.15)" stroke-width="1" stroke-dasharray="3,4" marker-end="url(#arr)"/>
+</svg>

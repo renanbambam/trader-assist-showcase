@@ -1,0 +1,110 @@
+<svg width="900" height="580" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580">
+  <defs>
+    <style>text { font-family: ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, monospace; }</style>
+  </defs>
+  <rect width="900" height="580" fill="#060b14"/>
+
+  <text x="450" y="38" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="600" letter-spacing="3">CLEAN ARCHITECTURE</text>
+  <line x1="260" y1="50" x2="640" y2="50" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+
+  <!-- Interface Layer -->
+  <rect x="28" y="60" width="844" height="492" rx="12" fill="rgba(99,102,241,0.03)" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <text x="52" y="80" fill="#6366f1" font-size="9.5" font-weight="700" letter-spacing="2">INTERFACE</text>
+  <g fill="#6366f1" font-size="9" opacity="0.65">
+    <text x="148" y="80">FastAPI Routers</text>
+    <text x="290" y="80">WebSocket Handler</text>
+    <text x="446" y="80">Middleware Stack</text>
+    <text x="578" y="80">APScheduler Jobs</text>
+    <text x="706" y="80">ContextVar IDs</text>
+  </g>
+
+  <!-- Infrastructure Layer -->
+  <rect x="70" y="98" width="760" height="432" rx="10" fill="rgba(245,158,11,0.025)" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <text x="92" y="117" fill="#f59e0b" font-size="9.5" font-weight="700" letter-spacing="2">INFRASTRUCTURE</text>
+  <g fill="#f59e0b" font-size="9" opacity="0.65">
+    <text x="218" y="117">SQLAlchemy Repos</text>
+    <text x="378" y="117">Redis EventBus</text>
+    <text x="510" y="117">Claude Adapter</text>
+    <text x="638" y="117">MT5 + yfinance</text>
+    <text x="762" y="117">Broadcaster</text>
+  </g>
+
+  <!-- Application Layer -->
+  <rect x="118" y="134" width="664" height="362" rx="8" fill="rgba(59,130,246,0.025)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="140" y="153" fill="#3b82f6" font-size="9.5" font-weight="700" letter-spacing="2">APPLICATION</text>
+  <g fill="#3b82f6" font-size="9" opacity="0.65">
+    <text x="240" y="153">Use Cases</text>
+    <text x="334" y="153">DTOs</text>
+    <text x="402" y="153">Port Interfaces</text>
+    <text x="534" y="153">Event Types</text>
+    <text x="644" y="153">Validators</text>
+  </g>
+
+  <!-- Domain Layer -->
+  <rect x="172" y="170" width="556" height="302" rx="6" fill="#080f1c" stroke="#10b981" stroke-width="2"/>
+  <text x="450" y="194" text-anchor="middle" fill="#10b981" font-size="13" font-weight="700" letter-spacing="3">DOMAIN</text>
+  <line x1="190" y1="203" x2="710" y2="203" stroke="rgba(16,185,129,0.14)" stroke-width="1"/>
+
+  <!-- TRADE -->
+  <rect x="184" y="213" width="152" height="240" rx="4" fill="rgba(16,185,129,0.04)" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+  <text x="260" y="231" text-anchor="middle" fill="#10b981" font-size="9" font-weight="600" letter-spacing="1">TRADE</text>
+  <line x1="188" y1="237" x2="332" y2="237" stroke="rgba(16,185,129,0.09)" stroke-width="1"/>
+  <g fill="rgba(226,232,240,0.5)" font-size="8.5">
+    <text x="194" y="253">• Trade Entity</text>
+    <text x="194" y="268">• RiskProfile VO</text>
+    <text x="194" y="283">• ChecklistValidator</text>
+    <text x="194" y="298">• TradeStatus</text>
+    <text x="194" y="313">• TradeDirection</text>
+    <text x="194" y="328">• R-Multiple calc</text>
+    <text x="194" y="343">• TradeResult</text>
+  </g>
+
+  <!-- ANALYSIS -->
+  <rect x="344" y="213" width="154" height="240" rx="4" fill="rgba(16,185,129,0.04)" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+  <text x="421" y="231" text-anchor="middle" fill="#10b981" font-size="9" font-weight="600" letter-spacing="1">ANALYSIS</text>
+  <line x1="348" y1="237" x2="494" y2="237" stroke="rgba(16,185,129,0.09)" stroke-width="1"/>
+  <g fill="rgba(226,232,240,0.5)" font-size="8.5">
+    <text x="354" y="253">• Analysis Entity</text>
+    <text x="354" y="268">• ConfidenceScore VO</text>
+    <text x="354" y="283">• ConfidenceFactors</text>
+    <text x="354" y="298">• KeyLevel VO</text>
+    <text x="354" y="313">• Scenario VO</text>
+    <text x="354" y="328">• ConfidenceLabel</text>
+    <text x="354" y="343">• AnalysisType</text>
+  </g>
+
+  <!-- BRIEFING -->
+  <rect x="506" y="213" width="200" height="110" rx="4" fill="rgba(16,185,129,0.04)" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+  <text x="606" y="231" text-anchor="middle" fill="#10b981" font-size="9" font-weight="600" letter-spacing="1">BRIEFING</text>
+  <line x1="510" y1="237" x2="702" y2="237" stroke="rgba(16,185,129,0.09)" stroke-width="1"/>
+  <g fill="rgba(226,232,240,0.5)" font-size="8.5">
+    <text x="516" y="253">• Briefing Entity</text>
+    <text x="516" y="268">• KeyLevels</text>
+    <text x="516" y="283">• UpcomingEvent VO</text>
+    <text x="516" y="298">• BriefingType</text>
+  </g>
+
+  <!-- REPLAY -->
+  <rect x="506" y="331" width="200" height="122" rx="4" fill="rgba(16,185,129,0.04)" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+  <text x="606" y="349" text-anchor="middle" fill="#10b981" font-size="9" font-weight="600" letter-spacing="1">REPLAY</text>
+  <line x1="510" y1="355" x2="702" y2="355" stroke="rgba(16,185,129,0.09)" stroke-width="1"/>
+  <g fill="rgba(226,232,240,0.5)" font-size="8.5">
+    <text x="516" y="371">• ReplaySession</text>
+    <text x="516" y="386">• ReplayFrame VO</text>
+    <text x="516" y="401">• SessionState</text>
+    <text x="516" y="416">• FrameIndex</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(36,516)">
+    <text x="0" y="12" fill="rgba(255,255,255,0.28)" font-size="8" letter-spacing="0.5">DEPENDENCY RULE — source code imports point inward only; outer layers never imported by inner layers</text>
+    <rect x="0" y="22" width="9" height="9" rx="1" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <text x="14" y="30" fill="#6366f1" font-size="8">Interface</text>
+    <rect x="98" y="22" width="9" height="9" rx="1" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <text x="112" y="30" fill="#f59e0b" font-size="8">Infrastructure</text>
+    <rect x="218" y="22" width="9" height="9" rx="1" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="232" y="30" fill="#3b82f6" font-size="8">Application</text>
+    <rect x="316" y="22" width="9" height="9" rx="1" fill="none" stroke="#10b981" stroke-width="2"/>
+    <text x="330" y="30" fill="#10b981" font-size="8">Domain</text>
+  </g>
+</svg>
