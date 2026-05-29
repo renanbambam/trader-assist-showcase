@@ -9,6 +9,8 @@
 
 > Intelligent real-time trading assistant — AI-powered analysis, market replay, and automated briefings, built on Clean Architecture and async Python.
 
+<sub>📖 **This is a public architecture showcase of a private system.** It documents design and engineering decisions through diagrams and illustrative excerpts — it does not contain the product's full source, AI prompts, strategies, datasets, or credentials.</sub>
+
 ![Dashboard](./assets/screenshots/dashboard.svg)
 
 ---
@@ -59,6 +61,36 @@ Dependency flow is always inward. Domain code has zero knowledge of infrastructu
 ### System Overview
 
 ![System Overview](./assets/diagrams/system-overview.svg)
+
+### Runtime & Data Flow
+
+The API is stateless; real-time delivery is decoupled from request handling through a Redis pub/sub event bus. Domain events are published by use cases and fanned out to WebSocket clients by a separate broadcaster, so any API instance can serve any client and the system scales horizontally without sticky sessions.
+
+```mermaid
+flowchart LR
+  Client -->|HTTP / WS| API["FastAPI<br/>(stateless instances)"]
+  API --> UC[Use cases]
+  UC --> DB[(PostgreSQL · async)]
+  UC -->|domain events| Bus[(Redis Pub/Sub)]
+  Bus --> BC[Event broadcaster]
+  BC -->|concurrent fan-out| WS[WebSocket clients]
+  AI["Claude<br/>(streaming, multi-modal)"] -.-> UC
+  Sched[APScheduler] -->|briefings| UC
+```
+
+---
+
+## System Design & Non-Functionals
+
+| Concern | Approach |
+|---------|----------|
+| **Concurrency** | Async-first ASGI; synchronous C-extensions (MetaTrader5, yfinance, Alembic) offloaded via `run_in_executor` to keep the event loop responsive |
+| **Horizontal scaling** | Stateless API; real-time delivery decoupled through Redis pub/sub, so any instance can serve any WebSocket client |
+| **Resilience** | Graceful lifespan shutdown, fan-out isolation (one dead socket never blocks others), cold-start snapshots on WebSocket connect |
+| **Backpressure** | Bounded WebSocket connections (`WS_MAX_CONNECTIONS`); stale consumers pruned after each fan-out |
+| **Observability** | End-to-end correlation IDs propagated through the async call stack via `ContextVar` |
+| **Testing** | Pure-domain unit tests + Testcontainers integration (real PostgreSQL & Redis); `ruff` + `mypy` gated in CI |
+| **AI efficiency** | Ephemeral prompt caching reuses the system-prompt prefix across sessions, cutting tokens processed on long contexts |
 
 ---
 
